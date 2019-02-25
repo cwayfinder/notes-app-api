@@ -45,10 +45,10 @@ provider:
       Resource:
         - "Fn::GetAtt": [ NotesTable, Arn ]
 
-# These environment variables are made available to our functions
-# under process.env.
-environment:
-  tableName: ${self:custom.tableName}
+  # These environment variables are made available to our functions
+  # under process.env.
+  environment:
+    tableName: ${self:custom.tableName}
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
