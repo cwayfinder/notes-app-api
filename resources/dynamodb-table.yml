@@ -11,7 +11,7 @@ Resources:
       KeySchema:
         - AttributeName: userId
           KeyType: HASH
-        - AttributeName: noteId
+        - AttributeName: itemId
           KeyType: RANGE
       # Set the capacity based on the stage
       ProvisionedThroughput:
