@@ -6,7 +6,7 @@ Resources:
       AttributeDefinitions:
         - AttributeName: userId
           AttributeType: S
-        - AttributeName: noteId
+        - AttributeName: itemId
           AttributeType: S
       KeySchema:
         - AttributeName: userId
