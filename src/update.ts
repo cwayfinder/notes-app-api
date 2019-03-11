@@ -1,7 +1,8 @@
 import * as dynamoDbLib from "./libs/dynamodb-lib";
-import {failure, success} from "./libs/response-lib";
+import { failure, success } from "./libs/response-lib";
+import { APIGatewayEvent, Context } from "aws-lambda";
 
-export async function main(event, context) {
+export async function main(event: APIGatewayEvent, _context: Context) {
     const data = JSON.parse(event.body);
     const params = {
         TableName: process.env.tableName,
@@ -26,9 +27,9 @@ export async function main(event, context) {
     };
 
     try {
-        const result = await dynamoDbLib.call("update", params);
-        return success({status: true});
+        await dynamoDbLib.call("update", params);
+        return success({ status: true });
     } catch (e) {
-        return failure({status: false});
+        return failure({ status: false });
     }
 }

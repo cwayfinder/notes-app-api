@@ -1,8 +1,9 @@
 import uuid from "uuid";
 import * as dynamoDbLib from "./libs/dynamodb-lib";
-import { success, failure } from "./libs/response-lib";
+import { failure, success } from "./libs/response-lib";
+import { APIGatewayEvent, Context } from "aws-lambda";
 
-export async function main(event, context) {
+export async function main(event: APIGatewayEvent, _context: Context) {
     const data = JSON.parse(event.body);
     const params = {
         TableName: process.env.tableName,
