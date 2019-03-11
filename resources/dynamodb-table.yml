@@ -6,10 +6,10 @@ Resources:
       AttributeDefinitions:
         - AttributeName: userId
           AttributeType: S
-        - AttributeName: itemId
+        - AttributeName: noteId
           AttributeType: S
       KeySchema:
-        - AttributeName: userId
+        - AttributeName: noteId
           KeyType: HASH
         - AttributeName: itemId
           KeyType: RANGE
